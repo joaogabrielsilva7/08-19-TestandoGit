@@ -1,7 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, Image, TextInput } from 'react-native';
-
+const LinksImportantes = ()=>{
+  return(
+    <View>
+        <Text>Meu primeiro componente</Text>
+    </View>
+    );
+};
 export default function App() {
     return (
         <View style={styles.container}>
@@ -15,6 +21,7 @@ export default function App() {
                         require("./src/assets/ei_search.png")
                         }>
                     </Image>
+
                     <TextInput
                         placeholder="Search"
                         placeholderTextColor="#F5FFFF"
@@ -34,6 +41,7 @@ export default function App() {
                 
             </View>
             <Text>Hello World!</Text>
+            <LinksImportantes />
             <StatusBar style="auto"  />
         </View>
     );
