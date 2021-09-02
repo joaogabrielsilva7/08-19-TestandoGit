@@ -1,13 +1,43 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, Image, TextInput } from 'react-native';
+
+
+const LinkItem = (props:any)=>{
+    return(
+        <Text style={stylesLink.text}>{props.name}</Text>
+    );
+}
+const stylesLink = StyleSheet.create({
+    text:{
+        //backgroundColor:"red",
+        marginTop:10,
+        color: '#4A4A4C',
+        fontSize: 13.71,
+
+    }
+});
+
+
 const LinksImportantes = ()=>{
-  return(
-    <View>
-        <Text>Meu primeiro componente</Text>
-    </View>
+    return(//Aqui dentro ficará o nosso JSX
+        <View style={stylesLinkImportantes.container}>
+            <LinkItem name="Home"/>
+            <LinkItem name="Post"/>
+            <LinkItem name="Videos"/>
+            <LinkItem name="Photos"/>
+            <LinkItem name="Community"/>
+        </View>
     );
 };
+const stylesLinkImportantes = StyleSheet.create({
+    container:{
+        
+
+    }
+});
+
+
 export default function App() {
     return (
         <View style={styles.container}>
@@ -21,7 +51,6 @@ export default function App() {
                         require("./src/assets/ei_search.png")
                         }>
                     </Image>
-
                     <TextInput
                         placeholder="Search"
                         placeholderTextColor="#F5FFFF"
@@ -33,20 +62,15 @@ export default function App() {
                 <Image source={
                     require("./src/assets/share.png")
                     }>
-                </Image>
-
-
-
-
-                
+                </Image>  
             </View>
+            
             <Text>Hello World!</Text>
             <LinksImportantes />
             <StatusBar style="auto"  />
         </View>
     );
 }
-
 const styles = StyleSheet.create({
     container: {
         flex:1,
